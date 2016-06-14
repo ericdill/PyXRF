@@ -1813,7 +1813,7 @@ def _make_hdf(fpath, runid):
         fly_type = start_doc.get('fly_type', None)
         subscan_dims = start_doc.get('subscan_dims', None)
 
-        if hdr.start.has_key('axes'):
+        if 'axes' in hdr.start:
             pos_list = hdr.start.axes
         else:
             pos_list = ['zpssx[um]', 'zpssy[um]']
@@ -1835,8 +1835,8 @@ def _make_hdf(fpath, runid):
 
         # issues on py3
         snake_scan = start_doc.get('snaking')
-    	if snake_scan[1] == True:
-    	    fly_type = 'pyramid'
+        if snake_scan[1] == True:
+            fly_type = 'pyramid'
 
         current_dir = os.path.dirname(os.path.realpath(__file__))
         config_file = 'srx_pv_config.json'

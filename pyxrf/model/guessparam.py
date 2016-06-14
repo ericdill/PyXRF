@@ -570,7 +570,7 @@ class GuessParamModel(Atom):
         # for k, v in six.iteritems(param_temp):
         #     if k == 'non_fitting_values':
         #         continue
-        #     if self.param_new.has_key(k):
+        #     if 'k' in self.param_new:
         #         v['value'] = self.param_new[k]['value']
         # self.param_new = param_temp
         #
